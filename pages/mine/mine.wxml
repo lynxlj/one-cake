@@ -1,0 +1,122 @@
+<view class='oc-mine'>
+  <view class='oc-mine-notlogin' wx:if='{{!isLogin}}'>
+    <view class='oc-mine-notlogin-title'>登录</view>
+    <view class='oc-mine-notlogin-title'>使用当前微信号登录</view>
+    <view class='oc-mine-notlogin-tip'>获取你的公开信息（头像，昵称等）</view>
+    <!-- <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入手机号" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">密码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input type="password" class="weui-input" placeholder="请输入密码" />
+        </view>
+      </view>
+    </view> -->
+    <button
+    class="weui-btn login-btn"
+    open-type='getUserInfo'
+    bindgetuserinfo='handleLogin'
+    >登录</button>
+  </view>
+  <view wx:else class='oc-mine-islogin'>
+  <view class='oc-mine-header'>
+    <view class='oc-mine-header-info'>
+    <view catchtap='handleChangeAvatar'>
+      <image class='oc-mine-header-info-logo' src='{{avatarUrl}}'></image>
+      <view class='oc-mine-header-changeAvatar'>点击头像修改</view>
+    </view>
+    <view class='oc-mine-header-info-name'>
+      <view>{{nickName}}</view>
+    </view>
+    </view>
+  </view>
+  <view class='oc-mine-info'>
+    <view class='oc-mine-info-item'>
+    <text class='oc-mine-info-item-num'>0.00</text>余额</view>
+    <view class='oc-mine-info-item'>
+    <text class='oc-mine-info-item-num'>0</text>积分</view>
+    <view class='oc-mine-info-item'>
+    <text class='oc-mine-info-item-num'>0</text>卡</view>
+    <view class='oc-mine-info-item'>
+    <text class='oc-mine-info-item-num'>0</text>券</view>
+  </view>
+  <view class='oc-mine-order'>
+    <view class='oc-mine-order-header'>
+    我的订单
+    <text class='look-all-order'>查看全部订单 > </text>
+    </view>
+    <view class='oc-mine-order-bottom'>
+      <view class='oc-mine-order-bottom-item'>
+        <text class='iconfont icon-daifukuan'></text>
+        代付款
+      </view>
+      <view class='oc-mine-order-bottom-item'>
+        <text class='iconfont icon-daijiedan'></text>
+        代接单
+      </view>
+      <view class='oc-mine-order-bottom-item'>
+        <text class='iconfont icon-daifahuo'></text>
+        代发货
+      </view>
+      <view class='oc-mine-order-bottom-item'>
+        <text class='iconfont icon-yifahuo'></text>
+        已发货
+      </view>
+      <view class='oc-mine-order-bottom-item'>
+        <text class='iconfont icon-yiwancheng'></text>
+        已完成
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title oc-mine-list">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <text class='iconfont icon-youhuima' style="margin-right: 5px;width:20px; height: 20px;"></text>
+          </view>
+          <view class="weui-cell__bd">优惠码</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <view catchtap='toCart' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <text class='iconfont icon-gouwuche' style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></text>
+          </view>
+          <view class="weui-cell__bd">购物车</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <text class='iconfont icon-shaixuantubiaogaozhuanqu12' style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></text>
+          </view>
+          <view class="weui-cell__bd">返现</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <text class='iconfont icon-zengpin' style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></text>
+          </view>
+          <view class="weui-cell__bd">赠品</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title oc-mine-list">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <text class='iconfont icon-zhanghaoshezhi' style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></text>
+          </view>
+          <view class="weui-cell__bd">账号设置</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+  </view>
+  <button class="weui-btn login-btn" catchtap='handleLogout'>退出登录</button>
+</view>
+
+</view>

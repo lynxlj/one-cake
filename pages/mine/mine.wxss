@@ -1,0 +1,94 @@
+.oc-mine{
+  background: #F9F9F9;
+}
+.oc-mine-header{
+  height: 172px;
+  background-image: url("http://imgqn.koudaitong.com/upload_files/2014/11/12/e20b6f127e14ce079509ba1f0d1dbdd3.jpeg");
+  background-size: 100%;
+  padding: 0 15px;
+  overflow: hidden;
+}
+.oc-mine-header-info{
+  margin-top: 50px;
+  display: flex;
+}
+.oc-mine-header-info-logo{
+  width: 140rpx;
+  height: 140rpx;
+  float: left;
+}
+.oc-mine-header-changeAvatar{
+  width: 140rpx;
+  font-size: 10px;
+  text-align: center;
+  color: #8a8a8a;
+}
+.oc-mine-header-info-name{
+  height: 120rpx;
+  line-height: 120rpx;
+  padding-left: 60rpx;
+}
+.oc-mine-info{
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  text-align: center;
+  background: #fff;
+}
+.oc-mine-info-item-num{
+  display: block;
+  color: #FF884D;
+}
+.oc-mine-order{
+  font-size: 14px;
+  padding: 0 15px;
+  color: #8a8a8a;
+  background: #fff;
+}
+.oc-mine-order-header{
+  margin: 40rpx auto;
+  border-bottom:1px solid #8a8a8a;
+  padding: 20rpx 0;
+}
+.look-all-order{
+  float: right;
+  color: #ddd;
+}
+.oc-mine-order-bottom{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.iconfont{
+  display: block;
+  font-size: 20px;
+}
+.oc-mine-notlogin{
+  font-size: 16px;
+  padding: 20rpx;
+}
+.oc-mine-notlogin-title{
+  font-size: 36rpx;
+  text-align: center;
+  padding: 10rpx;
+  color: #ff884d;
+  margin-bottom: 40rpx;
+}
+.login-btn{
+  background: #ff884d;
+  color: #fff;
+  margin-top: 100rpx;
+}
+.oc-mine-list{
+  margin-top: 60rpx;
+  font-size: 16px;
+  color: #8a8a8a;
+}
+.weui-cell__bd{
+  padding-left: 20rpx;
+}
+.oc-mine-notlogin-tip{
+  text-align: center;
+  font-size: 24rpx;
+  color: #8a8a8a;
+}

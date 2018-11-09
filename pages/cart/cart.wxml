@@ -1,0 +1,67 @@
+<view class='oc-cart'>
+  <view wx:if='{{cart.length === 0}}' class='oc-cart-empty'>
+    <text class='oc-cart-empty-text1'>
+      购物车快饿瘪了T.T
+    </text>
+    <text class='oc-cart-empty-text2'>
+      快给我挑点宝贝  
+    </text>
+    <navigator
+    url="../prolist/prolist?type=纯甄系列"
+    class='oc-cart-empty-href'
+    hover-class="oc-cart-empty-href-active">去逛逛</navigator>
+  </view>
+  <view wx:else class='oc-cart-notempty'>
+    <view class='oc-cart-notempty-body'>
+      <view class='oc-cart-notempty-header'>
+      壹蛋糕 ({{cartCount}})
+      <text class='oc-cart-notempty-header-edit' catchtap='edit'>编辑</text>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group>
+          <label class="weui-cell weui-check__label" wx:for="{{cart}}" wx:key="item.id">
+            <checkbox class="weui-check" value="{{item.id}}" checked="{{item.isChecked}}"/>
+            <view class="weui-cell__hd weui-check__hd_in-checkbox" id='{{item.id}}' catchtap="isChecked">
+                <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.isChecked}}"></icon>
+                <icon class="weui-icon-checkbox_success" type="success" color='orange' size="23" wx:if="{{item.isChecked}}"></icon>
+            </view>
+            <image class='oc-cart-notempty-body-img' src='{{item.image_url}}' catchtap='toDetail' data-id='{{item.id}}'></image>
+            <view class="weui-cell__bd oc-cart-notempty-body-text" wx:if='{{!isEdit}}'>
+              <view>{{item.title}}</view>
+              <view style='color:#ff884d'>价格：{{item.price}}</view><text>数量：{{item.count}}</text>
+            </view>
+            <view class="weui-cell__bd weui-cell__bd_edit" wx:else>
+              <view class="oc-cart-wrap">
+                <view class="oc-cart-wrap-add" id='{{item.id}}'  catchtap='handleReduceCount'>-</view>
+                <view class="oc-cart-wrap-num">{{item.count}}</view>
+                <view class="oc-cart-wrap-reduce" catchtap='handleAddCount' id='{{item.id}}'>+</view>
+              </view>
+              <view class="oc-cart-wrap-remove" catchtap='handleRemovePro' id='{{item.id}}'>
+              删除</view>
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class='oc-cart-notempty-bottom'>
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group>
+            <label class="weui-cell weui-check__label">
+                <checkbox class="weui-check" checked="{{isAllchecked}}" />
+                <view class="weui-cell__hd weui-check__hd_in-checkbox" catchtap="isAllchecked" wx:if='{{!isEdit}}'>
+                    <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!isAllchecked}}"></icon>
+                    <icon class="weui-icon-checkbox_success" type="success" size="23" color='orange' wx:if="{{isAllchecked}}"></icon>
+                </view>
+                <view class="weui-cell__bd" wx:if='{{!isEdit}}'>全选</view>
+                  <view class='oc-cart-notempty-bottom-right' wx:if='{{!isEdit}}'>
+                  <view class='oc-cart-totalPrice'>合计：<text>{{totalPrice}}</text>
+                  </view> 
+                  <view class="oc-cart-wrap-remove" >结算</view>
+                </view>
+                <view class="oc-cart-wrap-remove oc-cart-wrap-removeall" wx:else catchtap='handleRemoveAllPro'>清空全部商品</view>
+            </label>
+        </checkbox-group>
+       </view>
+    </view>
+  </view>
+</view>

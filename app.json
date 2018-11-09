@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mall/mall",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/prolist/prolist",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "One Cake",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ff884d"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#ff884d",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/img/home.png",
+        "selectedIconPath": "assets/img/home-selected.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "分类",
+        "iconPath": "assets/img/mall.png",
+        "selectedIconPath": "assets/img/mall-selected.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "assets/img/cart.png",
+        "selectedIconPath": "assets/img/cart-selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "assets/img/mine.png",
+        "selectedIconPath": "assets/img/mine-selected.png"
+      }
+    ]
+  }
+}

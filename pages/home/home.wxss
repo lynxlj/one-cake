@@ -1,0 +1,129 @@
+.slide-image{
+  width: 100%;
+  height: 175px;
+}
+.oc-home-header{
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+.oc-home-header{
+  background:url("https://img.yzcdn.cn/upload_files/2018/04/22/Fl1TX-N3b42FW27QQXnII_SrjJa6.jpg");
+  height: 250px;
+  background-size: 100%;
+}
+.oc-home-header-logo-img{
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 20rpx auto;
+  margin-top: 80rpx;
+  border: 1px solid #fff;
+}
+.bg-rgba{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, .1);
+  top:0;
+}
+.oc-home-header-title{
+  text-align: center;
+  width: 120rpx;
+  display: block;
+  color: #fff;
+  margin: 0 auto;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #fff;
+  font-weight: border;
+}
+.oc-home-header-bottom{
+  text-align: center;
+  margin-top: 10rpx;
+}
+.oc-home-header-text{
+  display: inline-block;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 20rpx;
+}
+.oc-home-header-text-left{
+  border-right: 1px solid #fff;
+}
+.oc-home-msg{
+  font-size: 14px;
+  color: #FF884D;
+}
+.oc-home-nav{
+  font-size: 16px;
+  justify-content: space-around;
+  color: #ff884d;
+  width: 100%;
+  height: 100rpx;
+  overflow: auto;
+  line-height: 100rpx;
+}
+.oc-home-nav::-webkit-scrollbar{
+  display: none;
+}
+.oc-home-nav-wrap{
+  width: 150%;
+  display: flex;
+  justify-content: space-around;
+}
+.oc-home-nav-item-active{
+  background: #FF884D;
+  color: #fff;
+}
+.oc-search{
+  font-size: 14px;
+}
+.oc-home-prolist{
+  text-align: center;
+  font-size: 16px;
+  padding: 10rpx 30rpx;
+  color: #8a8a8a;
+}
+.oc-home-prolist-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.oc-home-prolist-content-item{
+  width: 320rpx;
+  height: 450rpx;
+  margin-top: 10rpx;
+  font-size: 14px;
+}
+.oc-home-prolist-content-item-img{
+  width: 320rpx;
+  height: 320rpx;
+}
+.oc-home-prolist-content-item-title{
+  white-space: nowrap;  
+  text-overflow:ellipsis; 
+  overflow:hidden;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.oc-home-history-search{
+  margin-top: 20rpx;
+  padding-left:20rpx;
+  color: #8a8a8a; 
+  position: relative;
+}
+.icon-qingkong{
+  position: absolute;
+  top: 0;
+  right: 40rpx;
+}

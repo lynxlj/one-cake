@@ -1,0 +1,76 @@
+page{
+  height: 100%;
+}
+.oc-detail{
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.scroll{
+  flex: 1;
+  overflow-x: hidden;
+}
+.oc-detail-header{
+  height: 900rpx;
+  color: #8a8a8a;
+  font-size: 16px;
+}
+.oc-detail-title{
+  padding: 0 30rpx;
+}
+.oc-detail-price{
+  padding: 0 30rpx;
+}
+.oc-detail-img{
+  width: 750rpx;
+  height: 750rpx;
+}
+.oc-detail-content{
+  margin-top: 30rpx;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 0 30rpx;
+}
+.oc-detail-bottom{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  font-size: 14px;
+}
+.oc-detail-bottom-kefu{
+  flex: 1;
+  text-align: center;
+}
+.oc-detail-bottom-cart{
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.oc-detail-bottom-add{
+  width: 240rpx;
+  background:#FF8855;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+}
+.oc-detail-bottom-buy{
+   width: 240rpx;
+  background: #FF4444;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+}
+.iconfont{
+  font-size: 20px;
+}
+.cart-count-tip{
+  position:absolute;
+  top:-10rpx;
+  right: 15rpx;
+  width: 20px;
+  height: 20px;
+  border-radius:50%;
+  background: #FF4444;
+  color: #fff;
+}

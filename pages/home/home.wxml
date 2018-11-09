@@ -1,0 +1,96 @@
+<view class='oc-home'>
+  <view class='oc-home-header'>
+    <view class='oc-home-header-logo'>
+      <image
+class='oc-home-header-logo-img'src='https://img.yzcdn.cn/upload_files/2017/12/24/FlplbkjZ8Hx_lbp0dQmGvkeBjg7A.jpg'>
+</image>
+    </view>
+    <view class='oc-home-header-title'>壹蛋糕</view>
+    <view class='oc-home-header-bottom'>
+      <view class='oc-home-header-text oc-home-header-text-left'>
+        全部商品
+        <text>41</text>
+      </view>  
+      <view class='oc-home-header-text'>上新<text>11</text></view>
+    </view>
+    <view class='bg-rgba'></view>
+  </view>
+  <view class='oc-home-msg'>
+    <text class='iconfont icon-location'></text>
+       当前位置：<text wx:if="{{currentCity === '' }}">定位中...</text><text wx:else>{{currentCity}}</text>  
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="375"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='oc-home-nav'>
+    <view class='oc-home-nav-wrap'>
+      <navigator url="../prolist/prolist?type=纯甄系列"  class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active' >纯甄系列</navigator>
+        <navigator url="../prolist/prolist?type=法式系列" class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>法式系列</navigator>
+        <navigator url="../prolist/prolist?type=经典系列" class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>经典系列</navigator>
+        <navigator class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>下午茶</navigator>
+        <navigator class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>蛋糕配件</navigator>
+    </view>
+  </view>
+  <view class='oc-search'>
+    <view class="page">
+        <view class="page__bd">
+          <view class="weui-search-bar">
+              <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                  <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                  <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                  <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                      <icon type="clear" size="14"></icon>
+                  </view>
+              </view>
+              <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                  <icon class="weui-icon-search" type="search" size="14"></icon>
+                  <view class="weui-search-bar__text">搜索</view>
+              </label>
+          </view>
+          <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+      </view>
+      <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+          <navigator url="../prolist/prolist?type=纯甄系列" class="weui-cell" hover-class="weui-cell_active" catchtap='saveSearch' data-inputvalue='{{inputVal}}'>
+              <view class="weui-cell__bd">
+                  <view>{{inputVal}}</view>
+              </view>
+          </navigator>
+          <view class='oc-home-history-search'>
+            历史搜索:
+            <view wx:if='{{historySearch.length ===0 }}'>没有搜索历史</view>
+            <view wx:else>
+              <navigator url="../prolist/prolist?type=纯甄系列" class="weui-cell" hover-class="weui-cell_active" catchtap='saveSearch' wx:for="{{historySearch}}" wx:key='{{index}}' data-inputValue='{{item}}'>
+                <view class="weui-cell__bd">
+                    <view>{{item}}</view>
+                </view>
+              </navigator>
+            </view>
+            <text class='iconfont icon-qingkong' catchtap='clearAll'></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='oc-home-prolist'>
+    <view class='oc-home-prolist-titel'>推荐产品系列</view>
+    <view class='oc-home-prolist-content'>
+      <view class='oc-home-prolist-content-item' wx:for="{{recommendPro}}" wx:key="{{item.id}}" catchtap='toDetail' data-id='{{item.id}}'>
+        <view>
+          <image class='oc-home-prolist-content-item-img' src='{{item.image_url}}'></image>
+        </view>
+        <view class='oc-home-prolist-content-item-title'>
+           {{item.title}}
+        </view>
+        <view class='oc-home-prolist-content-item-price'>
+          ￥{{item.price}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

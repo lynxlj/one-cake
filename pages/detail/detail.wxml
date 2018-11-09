@@ -1,0 +1,43 @@
+<view class='oc-detail'>
+  <view class='scroll'>
+    <view class='oc-detail-header'>
+      <view>
+      <image src='{{detail.image_url}}' class='oc-detail-img'></image>
+      </view>
+      <view class='oc-detail-title'>
+      {{detail.title}}
+      </view>
+      <view class='oc-detail-price'>
+      价格 ： {{detail.price}}
+      </view>
+    </view>
+    <view class='oc-detail-content'>
+      <view>没有数据</view>
+      <view>没有数据</view>
+      <view>没有数据</view>
+      <view>没有数据</view>
+      <view>没有数据</view>
+      <view>没有数据</view>
+      <view>没有数据</view>
+      <view>没有数据</view>
+      <view>没有数据</view>
+    </view>
+  </view>
+  <view class='oc-detail-bottom'>
+    <view class='oc-detail-bottom-kefu'>
+      <view class='iconfont icon-kefu'></view>
+      客服
+    </view>
+    <view class='oc-detail-bottom-cart' catchtap='handleToCart'>
+      <view class='iconfont icon-gouwuche'></view>
+      购物车
+      <view class='cart-count-tip'>{{cartCount}}</view>
+    </view>
+    <view class='oc-detail-bottom-add' catchtap='handleAddToCart' id='{{detail.id}}'>
+      加入购物车
+    </view>
+    <view class='oc-detail-bottom-buy'>
+      立即购买
+    </view>
+  </view>
+</view>

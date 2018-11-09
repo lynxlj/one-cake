@@ -1,0 +1,39 @@
+<view class='oc-mall'>
+  <view class='oc-mall-nav'>
+    <view class='oc-mall-nav-wrap'>
+      <navigator url="../prolist/prolist?type=纯甄系列"  class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active' >纯甄系列</navigator>
+      <navigator url="../prolist/prolist?type=法式系列" class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>法式系列</navigator>
+      <navigator url="../prolist/prolist?type=经典系列" class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>经典系列</navigator>
+      <navigator class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>下午茶</navigator>
+      <navigator class='oc-mall-nav-item' hover-class='oc-mall-nav-item-active'>蛋糕配件</navigator>
+    </view>
+  </view>
+</view>
+<scroll-view
+scroll-y
+bindscrolltolower='loadMore'
+bindscrolltoupper='updatePro'
+class='oc-prolist'>
+  <view class='oc-prolist-title'>
+    全部商品
+  </view>
+  <view class='oc-prolist-content'>
+      <view class='oc-prolist-content-item' wx:for='{{prolist}}' wx:key="{{item.id}}" catchtap='toDetail' data-id='{{item.id}}'>
+        <view>
+          <image class='oc-prolist-content-item-img' src='{{item.image_url}}'></image>
+        </view>
+        <view class='oc-prolist-content-item-title'>
+          {{item.title}}
+        </view>
+        <view class='oc-prolist-content-item-bottom'>
+          <view class='oc-prolist-content-item-price'>
+            {{item.price}}
+          </view>
+          <view class='iconfont icon-gouwuche' catchtap='handleAddToCart' id='{{item.id}}'>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='nomore' wx:if='{{page > totalPage}}'>我也是有底线的哦……</view>
+</scroll-view>
+
